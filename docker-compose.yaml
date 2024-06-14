@@ -1,0 +1,17 @@
+version: '3.9'
+
+networks:
+  main-network:
+    name: main-network
+    external: false
+    driver: bridge
+services:
+  meet-backend:
+    image: ghcr.io/othmanDev1/meet-back:dev
+    ports:
+      - "3000:3000"
+    container_name: meet-back
+    networks:
+      - main-network
+
+    restart: always
